@@ -53,19 +53,16 @@ if (tet <0){
 }
 while(1){
     
-if (i==0){
 gpio_pin_toggle_dt(&led0);
 k_msleep(500);
-i=1;
-    }
-else{
-gpio_pin_toggle_dt(&led0);
 gpio_pin_toggle_dt(&led1);
+k_msleep(500);
 gpio_pin_toggle_dt(&led2);
+k_msleep(500);
 gpio_pin_toggle_dt(&led3);
 k_msleep(500);
-i=0;
-}
+
+
     
 }
 
