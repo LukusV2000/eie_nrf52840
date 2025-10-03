@@ -5,10 +5,25 @@
 #include <zephyr/kernel.h>
 #include <zephyr/drivers/gpio.h>
 
-struct gpio_dt_spec{
-const struct device *port;
-gpio_pin_t pin;
-gpio_dt_flags_t dt_flags
+#define LED0_NODE DT_ALIAS(led0)
+
+static const struct gpio_dt_spec led0=GPIO_DT_SPEC_GET(LED0_NODE,gpios)
 
 };
 
+int main(void){
+if(!gpio_is_ready_dt(&led0)){
+    return -1;
+}
+
+int ret=gpio_pin_configure_dt(&ledo,GPIO_OUTPUT_ACTIVE);
+if (ret <0){
+    return ret;
+}
+while(1){
+
+    
+}
+
+    return 0;
+}
